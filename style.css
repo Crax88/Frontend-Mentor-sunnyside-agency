@@ -181,6 +181,22 @@ header .header-arrow {
 	justify-content: center;
 	padding-left: 20%;
 	padding-right: 15%;
+	transition: transform 1s;
+}
+.content .item:nth-of-type(1) {
+	transform: translateX(-100%);
+}
+.content .item:nth-of-type(4) {
+	transform: translateX(100%);
+}
+
+.content .item:nth-of-type(1).animate,
+.content .item:nth-of-type(4).animate {
+	transform: translateX(0);
+}
+.content .item:nth-of-type(4).animate {
+	animation-name: slideright;
+	animation-duration: 1s;
 }
 
 .content .item:nth-of-type(1) h3,
@@ -316,6 +332,12 @@ header .header-arrow {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	transform: scale(0);
+	transition: transform 1s;
+}
+
+.testimonial-box.animate {
+	transform: scale(1);
 }
 
 .testimonial-box img {
@@ -351,6 +373,7 @@ header .header-arrow {
 
 .image-grid img {
 	width: 100%;
+	scale: 0;
 }
 
 

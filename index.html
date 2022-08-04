@@ -37,7 +37,7 @@
     </header>
     <main>
       <div class="content" id="content">
-        <div class="item">
+        <div class="item" id="transform">
           <h3>Transform your brand</h3>
           <p>
             We are a full-service creative agency specializing in helping brands
@@ -52,7 +52,7 @@
         <div class="item">
           <img src="images/desktop/image-stand-out.jpg" alt="" />
         </div>
-        <div class="item">
+        <div class="item" id="standout">
           <h3>Stand out to the right audience</h3>
           <p>
             Using a collaborative formula of designers, researchers,
@@ -171,6 +171,12 @@
     <script>
       const btn = document.querySelector("#menu-toggle");
       const nav = document.querySelector("#nav");
+      const elements = [
+        document.querySelector("#transform"),
+        document.querySelector("#standout"),
+        ...document.querySelectorAll(".testimonial-box"),
+      ];
+
       let isMenuOpen = false;
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -184,6 +190,31 @@
           isMenuOpen = false;
         }
       });
+
+      const inView = (element) => {
+        const elementHeight = element.clientHeight;
+        const windowHeight = window.innerHeight;
+
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        const scrollPosition = scrollY + windowHeight;
+
+        const elementPosition =
+          element.getBoundingClientRect().top + scrollY + elementHeight;
+
+        if (scrollPosition > elementPosition - elementHeight / 2) {
+          return true;
+        }
+
+        return false;
+      };
+
+      const animate = () => {
+        elements.forEach((element) => {
+          if (inView(element)) element.classList.add("animate");
+        });
+      };
+      document.addEventListener("scroll", animate);
     </script>
   </body>
 </html>
