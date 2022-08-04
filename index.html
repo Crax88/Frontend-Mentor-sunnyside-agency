@@ -92,46 +92,46 @@
       <div class="tesimonials">
         <h4>Client testimonials</h4>
         <div class="testimonials-container">
-        <div class="testimonial-box">
-          <img
-            class="testimonials-box_avatar"
-            src="/images/image-emily.jpg"
-            alt=""
-          />
-          <p class="testimonials-box_quote">
-            We put our trust in Sunnyside and they delivered, making sure our
-            needs were met and deadlines were always hit.
-          </p>
-          <p class="testimonials-box_name">Emily R.</p>
-          <p class="testimonials-box_positon">Marketing Director</p>
-        </div>
-        <div class="testimonial-box">
-          <img
-            class="testimonials-box_avatar"
-            src="/images/image-thomas.jpg"
-            alt=""
-          />
-          <p class="testimonials-box_quote">
-            Sunnyside’s enthusiasm coupled with their keen interest in our
-            brand’s success made it a satisfying and enjoyable experience.
-          </p>
-          <p class="testimonials-box_name">Thomas S.</p>
-          <p class="testimonials-box_positon">Chief Operating Officer</p>
-        </div>
-        <div class="testimonial-box">
-          <img
-            class="testimonials-box_avatar"
-            src="/images/image-jennie.jpg"
-            alt=""
-          />
-          <p class="testimonials-box_quote">
+          <div class="testimonial-box">
+            <img
+              class="testimonials-box_avatar"
+              src="/images/image-emily.jpg"
+              alt=""
+            />
+            <p class="testimonials-box_quote">
+              We put our trust in Sunnyside and they delivered, making sure our
+              needs were met and deadlines were always hit.
+            </p>
+            <p class="testimonials-box_name">Emily R.</p>
+            <p class="testimonials-box_positon">Marketing Director</p>
+          </div>
+          <div class="testimonial-box">
+            <img
+              class="testimonials-box_avatar"
+              src="/images/image-thomas.jpg"
+              alt=""
+            />
+            <p class="testimonials-box_quote">
+              Sunnyside’s enthusiasm coupled with their keen interest in our
+              brand’s success made it a satisfying and enjoyable experience.
+            </p>
+            <p class="testimonials-box_name">Thomas S.</p>
+            <p class="testimonials-box_positon">Chief Operating Officer</p>
+          </div>
+          <div class="testimonial-box">
+            <img
+              class="testimonials-box_avatar"
+              src="/images/image-jennie.jpg"
+              alt=""
+            />
+            <p class="testimonials-box_quote">
               Incredible end result! Our sales increased over 400% when we
               worked with Sunnyside. Highly recommended!
-          </p>
-          <p class="testimonials-box_name">Jennie F.</p>
-          <p class="testimonials-box_positon">Business Owner</p>
+            </p>
+            <p class="testimonials-box_name">Jennie F.</p>
+            <p class="testimonials-box_positon">Business Owner</p>
+          </div>
         </div>
-      </div>
       </div>
       <div class="image-grid">
         <img src="/images/desktop/image-gallery-milkbottles.jpg" alt="" />
@@ -179,5 +179,22 @@
       >. Coded by
       <a href="https://www.frontendmentor.io/profile/Crax88">N. Trafilkin</a>.
     </div>
+    <script>
+      const btn = document.querySelector("#menu-toggle");
+      const nav = document.querySelector("#nav");
+      let isMenuOpen = false;
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        nav.classList.toggle("active");
+        isMenuOpen = !isMenuOpen;
+      });
+
+      document.body.addEventListener("click", () => {
+        if (isMenuOpen) {
+          nav.classList.remove("active");
+          isMenuOpen = false;
+        }
+      });
+    </script>
   </body>
 </html>
