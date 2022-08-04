@@ -393,6 +393,16 @@ footer {
 	color: var(--white);
 }
 
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	background-color: rgba(0, 128, 0, 0.5);
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
 
 @media(max-width: 768px) {
 	.item h3 {
